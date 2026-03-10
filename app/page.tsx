@@ -31,7 +31,7 @@ export default function HomePage() {
   return (
     <>
       {/* ═════ HERO – doar titlu, descriere scurtă, butoane + imagine fundal ═════ */}
-      <section className="relative min-h-[85vh] flex items-center overflow-hidden" aria-label="Hero">
+      <section className="relative min-h-[62vh] sm:min-h-[75vh] lg:min-h-[85vh] flex items-center overflow-hidden" aria-label="Hero">
         <Image
           src="/images/hero.jpg"
           alt=""
@@ -41,7 +41,7 @@ export default function HomePage() {
           sizes="100vw"
         />
 
-        <div className="relative z-10 max-w-7xl mx-auto px-6 w-full pt-24">
+        <div className="relative z-10 max-w-7xl mx-auto px-6 w-full pt-20 sm:pt-24">
           <div className="max-w-2xl">
             <h1
               className="font-playfair text-[clamp(2.8rem,7vw,5.5rem)] font-bold leading-[0.95] text-white mb-6"
