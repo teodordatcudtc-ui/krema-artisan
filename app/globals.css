@@ -1,0 +1,183 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --gold: #c58e3f;
+  --chocolate: #351507;
+  --brown: #b47c3b;
+  --cream: #f8dfb2;
+  --amber: #aa5f0c;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--cream);
+  color: var(--chocolate);
+  overflow-x: hidden;
+}
+
+/* ─── Scroll reveal ─── */
+.reveal {
+  opacity: 0;
+  transform: translateY(36px);
+  transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-left {
+  opacity: 0;
+  transform: translateX(-40px);
+  transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal-left.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.reveal-right {
+  opacity: 0;
+  transform: translateX(40px);
+  transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal-right.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Stagger children for lists/grids */
+.stagger > * {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.55s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.55s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.stagger.visible > *:nth-child(1) { opacity: 1; transform: none; transition-delay: 0.05s; }
+.stagger.visible > *:nth-child(2) { opacity: 1; transform: none; transition-delay: 0.15s; }
+.stagger.visible > *:nth-child(3) { opacity: 1; transform: none; transition-delay: 0.25s; }
+.stagger.visible > *:nth-child(4) { opacity: 1; transform: none; transition-delay: 0.35s; }
+.stagger.visible > *:nth-child(5) { opacity: 1; transform: none; transition-delay: 0.45s; }
+.stagger.visible > *:nth-child(6) { opacity: 1; transform: none; transition-delay: 0.55s; }
+
+/* ─── Nav link underline ─── */
+.nav-link {
+  position: relative;
+  padding-bottom: 2px;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 0;
+  height: 1.5px;
+  background-color: var(--gold);
+  transition: width 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+  width: 100%;
+}
+
+/* ─── Gold gradient text ─── */
+.text-gold-gradient {
+  background: linear-gradient(135deg, #f8dfb2 0%, #c58e3f 40%, #aa5f0c 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ─── Dividers ─── */
+.gold-line {
+  height: 1px;
+  background: linear-gradient(90deg, transparent 0%, var(--gold) 50%, transparent 100%);
+}
+
+.gold-line-left {
+  height: 1px;
+  background: linear-gradient(90deg, var(--gold) 0%, transparent 100%);
+}
+
+/* ─── Card hover lift ─── */
+.card-lift {
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.card-lift:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 24px 64px rgba(197, 142, 63, 0.18);
+}
+
+/* ─── Scrollbar ─── */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--cream); }
+::-webkit-scrollbar-thumb { background: var(--brown); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--gold); }
+
+/* ─── Selection ─── */
+::selection {
+  background-color: var(--gold);
+  color: var(--chocolate);
+}
+
+/* ─── Form inputs ─── */
+.form-input {
+  @apply w-full bg-white border border-chocolate/20 text-chocolate font-raleway text-sm px-5 py-4
+    placeholder-chocolate/35 focus:outline-none focus:border-gold transition-colors duration-300;
+}
+
+.form-label {
+  @apply block text-chocolate/55 font-raleway text-xs tracking-widest uppercase mb-2;
+}
+
+/* ─── Button variants ─── */
+.btn-gold {
+  @apply inline-block bg-gold text-chocolate font-raleway font-bold text-xs tracking-widest uppercase
+    px-8 py-4 hover:bg-amber transition-all duration-300;
+}
+
+.btn-outline-gold {
+  @apply inline-block border border-gold text-gold font-raleway font-semibold text-xs tracking-widest uppercase
+    px-8 py-4 hover:bg-gold hover:text-chocolate transition-all duration-300;
+}
+
+.btn-outline-cream {
+  @apply inline-block border border-chocolate/30 text-chocolate font-raleway text-xs tracking-widest uppercase
+    px-8 py-4 hover:border-gold hover:text-gold transition-all duration-300;
+}
+
+/* ─── Section tag ─── */
+.section-tag {
+  @apply flex items-center gap-3 mb-6;
+}
+
+.section-tag::before {
+  content: '';
+  display: block;
+  width: 36px;
+  height: 1px;
+  background-color: var(--gold);
+}
+
+/* ─── Page hero overlap ─── */
+.page-hero {
+  @apply relative bg-white flex items-start overflow-hidden;
+  padding-top: 7rem;
+  padding-bottom: 2.5rem;
+}
