@@ -12,12 +12,21 @@
 
 html {
   scroll-behavior: smooth;
+  width: 100%;
+  overflow-x: clip;
 }
 
 body {
   background-color: var(--cream);
   color: var(--chocolate);
-  overflow-x: hidden;
+  width: 100%;
+  overflow-x: clip;
+  position: relative;
+}
+
+main {
+  width: 100%;
+  overflow-x: clip;
 }
 
 /* ─── Scroll reveal ─── */
