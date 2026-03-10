@@ -79,7 +79,7 @@ export default function DesprePage() {
                     sizes="(max-width: 1024px) 100vw, 50vw"
                   />
                 </div>
-                <div className="absolute -bottom-8 -right-4 md:-right-8 bg-gold px-8 py-6 text-white">
+                <div className="absolute -bottom-8 right-2 md:-right-8 bg-gold px-8 py-6 text-white">
                   <p className="font-playfair text-5xl font-bold leading-none">2019</p>
                   <p className="font-raleway text-[0.6rem] tracking-[0.3em] uppercase font-bold mt-1">Fondată</p>
                 </div>

@@ -54,7 +54,7 @@ export default function ProductCard({ name, price, image, fallbackImage, slug }:
   return (
     <article className="group text-center select-none">
       {/* ── Zona vizuală: blob fix + poză produs deasupra ── */}
-      <div className="relative flex justify-center items-center w-[200px] mx-auto mb-5" style={{ height: '210px' }}>
+      <div className="relative flex justify-center items-center w-[200px] mx-auto mb-5 overflow-hidden" style={{ height: '210px' }}>
 
         {/* Blob organic – mereu același, indiferent de produs */}
         <div className="absolute inset-0 w-full h-full transition-transform duration-500 group-hover:scale-[1.03]">
